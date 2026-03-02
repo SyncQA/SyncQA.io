@@ -30,17 +30,16 @@ Você pode configurar o acesso ao Jira de duas formas.
   - `JIRA_BASE_URL` – URL base do Jira, por exemplo: `https://suaorg.atlassian.net`
   - `JIRA_EMAIL` – e-mail do usuário (conta usada no Jira)
   - `JIRA_API_TOKEN` – token de API gerado no Jira
-
 - **Via builder em código**: informando `url`, `email` e `apiToken` diretamente no código.
 
 ### Classe principal da SDK
 
 A fachada principal é a classe `com.sync.qa.sdk.JiraQA`, que expõe operações de alto nível:
 
-- **`createTestCase(TestCase testCase)`**: cria um novo Test Case no Jira.
-- **`createTestCaseIfNotExists(TestCase testCase)`**: cria o Test Case apenas se ainda não existir (mesma combinação de projeto + summary).
-- **`reportExecution(Execution execution)`**: adiciona um comentário em um issue com o resultado de uma execução de testes.
-- **`isConfigured()`**: verifica se a autenticação está corretamente configurada.
+- `**createTestCase(TestCase testCase)`**: cria um novo Test Case no Jira.
+- `**createTestCaseIfNotExists(TestCase testCase)**`: cria o Test Case apenas se ainda não existir (mesma combinação de projeto + summary).
+- `**reportExecution(Execution execution)**`: adiciona um comentário em um issue com o resultado de uma execução de testes.
+- `**isConfigured()**`: verifica se a autenticação está corretamente configurada.
 
 Os modelos de domínio principais são:
 
@@ -161,9 +160,9 @@ public class DemoJiraIntegrationApplication {
 mvn compile exec:java -Dexec.mainClass="com.exemplo.jira.DemoJiraIntegrationApplication"
 ```
 
-3. Verifique no Jira:
-   - O novo issue/caso de teste criado.
-   - O comentário com o resumo da execução dos testes.
+1. Verifique no Jira:
+  - O novo issue/caso de teste criado.
+  - O comentário com o resumo da execução dos testes.
 
 ---
 
@@ -182,4 +181,13 @@ JiraQA jira = JiraQA.builder()
 
 O restante do fluxo (`TestCase`, `Execution` e chamadas de API) permanece exatamente igual ao exemplo anterior.
 
+---
 
+## 👩‍💻 Project Author
+
+Developed and maintained by Rose Dias
+QA Engineer | Automation Architect | Java Specialist  
+
+LinkedIn: [https://www.linkedin.com/in/rosedias](https://www.linkedin.com/in/rosedias)  
+
+Portfolio: [https://qa-rosedias.web.app](https://qa-rosedias.web.app)
